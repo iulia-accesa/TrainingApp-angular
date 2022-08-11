@@ -1,0 +1,43 @@
+<section class="container__login-form">
+  <form 
+  fxLayout="column" 
+  fxLayoutAlign="center center" 
+  #f="ngForm"
+  (ngSubmit)="onSubmit(f)">
+    <mat-form-field>
+      <input
+        type="email"
+        matInput
+        placeholder="Your email"
+        ngModel
+        name="email"
+        email
+        required
+        #emailInput="ngModel"
+      /><!--ngModel directive binds an input,select, textarea 
+          (or custom form control) 
+          to a property on the scope using NgModelController-->
+      <mat-error *ngIf="emailInput.hasError('required')"
+        >Field must not be empty</mat-error
+      >
+      
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        type="password"
+        matInput
+        placeholder="Your password"
+        ngModel
+        name="password"
+        required
+        minlength="6"
+        #pwInput="ngModel"
+    /></mat-form-field>
+    <button 
+    type="submit" 
+    mat-raised-button 
+    color="primary"
+    [disabled]="f.invalid">Submit</button> <!--binding to disabled propery of the element-->
+  
+  </form>
+</section>

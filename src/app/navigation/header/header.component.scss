@@ -1,0 +1,16 @@
+a {
+    text-decoration: none;
+    color:white;
+    font-size: large;
+}
+a:hover,a:active{
+    color:lightgrey;
+}
+mat-toolbar{
+    .menu{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+    }
+}
