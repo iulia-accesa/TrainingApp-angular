@@ -32,12 +32,11 @@ export class HeaderComponent implements OnInit,OnDestroy {
     this._isAuth = value;
   }
 
-  onLogout(){
-    this.authService.logout();
-  }
-
   ngOnDestroy(): void {
     this.authSubscription.unsubscribe();
   }
 
+  onLogout(){
+    this.authService.logout();
+  }
 }
