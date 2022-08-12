@@ -11,8 +11,9 @@
     </div>
     <div><a routerLink="/">LOGO</a></div>
     <div class="menu" fxHide.xs>
-      <a routerLink="/signup">Signup</a>
-      <a routerLink="/login">Login</a>
-      <a routerLink="/training">Training</a>
+      <a *ngIf="!isAuth" routerLink="/signup">Signup</a>
+      <a *ngIf="!isAuth"  routerLink="/login">Login</a>
+      <a *ngIf="isAuth" routerLink="/training">Training</a>
+      <a *ngIf="isAuth" routerLink="/login" (click)="onLogout()">Log out</a>
     </div>
   </mat-toolbar>
